@@ -7,8 +7,13 @@ const ToDo = ({ todo, index, done, deleteTodo }) => {
     textDecoration: 'line-through'
   };
 
+  const todoStyle = {
+    border: '1px solid black',
+    margin: '5px 0px'
+  };
+
   return (
-    <div style={{ border: '1px solid black' }}>
+    <div style={todoStyle}>
       <p style={todo.done ? doneStyle : {}}>
         Task: <Link to={`/todo/${index}`}>{todo.task}</Link>
       </p>
@@ -24,3 +29,12 @@ const ToDo = ({ todo, index, done, deleteTodo }) => {
     </div>
   );
 };
+
+ToDo.propTypes = {
+  todo: PropTypes.object.isRequired,
+  index: PropTypes.number.isRequired,
+  done: PropTypes.func.isRequired,
+  deleteTodo: PropTypes.func.isRequired
+};
+
+export default ToDo;
