@@ -11,6 +11,7 @@ const ToDoList = ({ todos, done, deleteTodo }) => {
           {todos.map((todo, index) => {
             return (
               <ToDo
+                key={index}
                 todo={todo}
                 index={index}
                 done={done}
@@ -25,7 +26,13 @@ const ToDoList = ({ todos, done, deleteTodo }) => {
 };
 
 ToDoList.propTypes = {
-  todos: PropTypes.arrayOf(PropTypes.shape(ToDo)),
+  todos: PropTypes.arrayOf(
+    PropTypes.shape({
+      task: PropTypes.string.isRequired,
+      details: PropTypes.string.isRequired,
+      done: PropTypes.bool.isRequired
+    })
+  ),
   done: PropTypes.func.isRequired,
   deleteTodo: PropTypes.func.isRequired
 };

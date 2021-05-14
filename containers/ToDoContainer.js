@@ -1,22 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ToDoList from '../components/ToDoList';
+import AddToDo from '../components/AddToDo';
 
-const ToDoContainer = () => {
-  const [todos, setTodos] = useState([]);
-
-  const done = (index, event) => {
-    const todosCopy = todos;
-    todosCopy[index].done = event.target.checked;
-    setTodos([...todosCopy]);
-  };
-
-  const deleteTodo = index => {
-    const todosCopy = todos;
-    todosCopy.splice(index, 1);
-    setTodos([...todosCopy]);
-  };
-
-  return <ToDoList todos={todos} done={done} deleteTodo={deleteTodo} />;
+const ToDoContainer = ({ todos, done, deleteTodo, add }) => {
+  return (
+    <>
+      <h1>To Do List - PayPal</h1>
+      <AddToDo add={add} />
+      <ToDoList todos={todos} done={done} deleteTodo={deleteTodo} />
+    </>
+  );
 };
 
 export default ToDoContainer;
