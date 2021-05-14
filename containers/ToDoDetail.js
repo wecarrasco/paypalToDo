@@ -6,7 +6,6 @@ const ToDoDetail = ({ todo }) => {
   const { id } = useParams();
   const history = useHistory();
 
-  console.log(todo);
   const [currentTodo, setTodo] = useState({});
 
   useEffect(() => {
