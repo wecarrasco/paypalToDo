@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const AddToDo = ({ add }) => {
   const [newTodo, setNewTodo] = useState({
@@ -46,6 +47,10 @@ const AddToDo = ({ add }) => {
       </button>
     </>
   );
+};
+
+AddToDo.propTypes = {
+  add: PropTypes.func.isRequired
 };
 
 export default AddToDo;
