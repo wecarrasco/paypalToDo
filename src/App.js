@@ -6,9 +6,7 @@ import ToDoDetail from '../containers/ToDoDetail';
 import './style.css';
 
 export default function App() {
-  const [todos, setTodos] = useState([
-    { task: 'yes', details: 'yessir', done: false }
-  ]);
+  const [todos, setTodos] = useState([]);
 
   const done = (index, event) => {
     const todosCopy = todos;
