@@ -9,7 +9,8 @@ const ToDo = ({ todo, index, done, deleteTodo }) => {
 
   const todoStyle = {
     border: '1px solid black',
-    margin: '5px 0px'
+    margin: '5px 0px',
+    padding: '5px'
   };
 
   return (

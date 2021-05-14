@@ -1,17 +1,19 @@
-import React from "react";
-import {Router, Switch, Route} from 'react-router-dom'
-import "./style.css";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ToDoContainer from '../containers/ToDoContainer';
+
+import './style.css';
 
 export default function App() {
   return (
     <Router>
       <Switch>
         <Route path="/">
-          <ToDoList/>
+          <ToDoContainer />
         </Route>
-        <Route path="/todo/:id">
+        {/*<Route path="/todo/:id">
           <ToDoDetails/>
-        </Route>
+        </Route>*/}
       </Switch>
     </Router>
   );
